@@ -9,10 +9,12 @@ import { DashboardPage } from './pages/DashboardPage'
 import { ResetPasswordPage } from './pages/ResetPasswordPage'
 import { UpdatePasswordPage } from './pages/UpdatePasswordPage'
 import { ProfilePage } from './pages/ProfilePage'
+import { SplashPage } from './pages/SplashPage'
 
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<SplashPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
@@ -22,7 +24,6 @@ export default function App() {
       <Route path="/post/:slug" element={<ProtectedRoute><PostPage /></ProtectedRoute>} />
       <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
       <Route path="/profile/:username" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
-      <Route path="/" element={<ProtectedRoute><FeedPage /></ProtectedRoute>} />
     </Routes>
   )
 }
